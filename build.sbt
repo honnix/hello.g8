@@ -1,3 +1,5 @@
+import Dependencies._
+
 lazy val root = (project in file(".")).
   aggregate(app).
   settings(inThisBuild(List(
@@ -10,4 +12,7 @@ lazy val root = (project in file(".")).
 lazy val app = (project in file("app")).
   settings(
     name := "$name$"
+  ).
+  settings(
+    libraryDependencies += scalaCheck
   )
